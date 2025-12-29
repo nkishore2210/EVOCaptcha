@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind User Game</title>
+    <style>
+        /* Basic White Screen UI */
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .game-container {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .score {
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 30px;
+        }
+
+        .path {
+            width: 80%;
+            height: 10px;
+            background-color: lightgray;
+            margin: 20px auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .player {
+            width: 20px;
+            height: 20px;
+            background-color: #4CAF50; /* Green for the player */
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            transition: bottom 0.3s ease; /* Smooth jump transition */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="message" id="message">Press Space or Up Arrow to Jump!</div>
+        <div class="path" id="path">
+            <div class="player" id="player"></div>
+        </div>
+    </div>
+
+    <script>
+        // Basic Game Logic with Sound
+        const game = {
+            player: { jumping: false },
+            score: 0,
+            jumpSound: new Audio('https://www.soundjay.com/button/beep-07.wav'), // Jump sound
+
+            // Start the game
+            startGame: function () {
+                this.score = 0;
+                this.player.jumping = false;
+                document.getElementById('score').textContent = this.score;
+            },
+
+            // Jump function
+            jump: function () {
+                if (!this.player.jumping) {
+                    this.player.jumping = true;
+                    this.jumpSound.play(); // Play jump sound when spacebar is pressed
+                    
+                    // Animate the jump (move player up and then back down)
+                    const playerElement = document.getElementById('player');
+                    playerElement.style.bottom = '50px'; // Move up
+                    setTimeout(() => {
+                        playerElement.style.bottom = '0px'; // Move back down after 300ms
+                        this.player.jumping = false;
+                    }, 300);
+                }
+            },
+        };
+
+        // Start the game
+        game.startGame();
+
+        // Simulate a "jump" when the player presses a key (spacebar or up arrow)
+        document.addEventListener("keydown", (event) => {
+            if (event.key === " " || event.key === "ArrowUp") { // Jump on space or up arrow
+                game.jump();
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+# .gitignore
+
+# Node modules
+frontend/node_modules/
+backend/venv/
+backend/__pycache__/
+
+# Build files
+frontend/build/
+backend/*.pyc
+
+# Environment variables
+frontend/.env
+backend/.env
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/

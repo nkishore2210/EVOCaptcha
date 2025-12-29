@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.gif-section {
+    margin-bottom: 20px;
+}
+
+#gif-container {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    background-color: #f4f4f4;
+    display: block;
+    margin: 0 auto;
+}
+
+.result-message {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    display: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.result-message.success {
+    color: #28a745;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.result-message.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+/* Add these styles to your global CSS or relevant CSS file */
+
+/* Result Message Styles */
+.result-message {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .result-message.success {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .result-message.error {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Close Button Styles */
+  .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  

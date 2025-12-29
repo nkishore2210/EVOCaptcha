@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Test</title>
+</head>
+<body>
+    <button id="playSound">Play Sound</button>
+
+    <script>
+        const jumpSound = new Audio('https://www.soundjay.com/button/beep-07.wav');
+        document.getElementById('playSound').addEventListener('click', () => {
+            jumpSound.play().then(() => {
+                console.log("Sound played successfully.");
+            }).catch(err => {
+                console.error("Failed to play sound:", err);
+            });
+        });
+    </script>
+</body>
+</html>
