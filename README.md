@@ -63,6 +63,7 @@ EVOCaptcha follows a **behavior-driven verification pipeline**:
 ---
 
 ## Project Structure
+```
 EVOCaptcha/
 ├── backend/ # Backend logic and ML models
 ├── frontend/ # Client-side scripts and UI
@@ -71,6 +72,7 @@ EVOCaptcha/
 ├── test.py # Testing and evaluation scripts
 ├── tailwind.config.js # Frontend configuration
 └── README.md # Project documentation
+```
 
 ---
 
